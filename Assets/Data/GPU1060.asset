@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: GPU1060
   m_EditorClassIdentifier: 
   Name: Nvidia GTX 1060
-  Price: 1000
-  CudaPower: 400
-  CudaRam: 4
-  Energy: -300
+  Price: 512
+  CudaPower: 64
+  Energy: -200

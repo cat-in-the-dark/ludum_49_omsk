@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee7ac9a212e254cbabf15f6c82bfde24, type: 3}
-  m_Name: GPU710
+  m_Name: GPU3070
   m_EditorClassIdentifier: 
-  Name: Nvidia GTX 710
-  Price: 100
-  CudaPower: 100
-  CudaRam: 20
-  Energy: -200
+  Name: Nvidia RTX 3070
+  Price: 4096
+  CudaPower: 512
+  Energy: -300

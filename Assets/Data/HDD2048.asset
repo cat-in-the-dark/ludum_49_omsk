@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25e4fa01734c44ec953a21ea91c8eda, type: 3}
-  m_Name: RAM2
+  m_Script: {fileID: 11500000, guid: 5b726d12506e449f5a1b5a1aa2f4bb43, type: 3}
+  m_Name: HDD2048
   m_EditorClassIdentifier: 
-  Name: RAM 2GB
-  Price: 128
-  CpuRam: 128
-  Energy: -10
+  Name: HDD 2TB
+  Price: 256
+  DiskSize: 256
+  Energy: -50

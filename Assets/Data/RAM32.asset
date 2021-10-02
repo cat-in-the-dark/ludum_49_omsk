@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d25e4fa01734c44ec953a21ea91c8eda, type: 3}
-  m_Name: RAM2
+  m_Name: RAM32
   m_EditorClassIdentifier: 
-  Name: RAM 2GB
-  Price: 128
-  CpuRam: 128
-  Energy: -10
+  Name: RAM 32GB
+  Price: 2048
+  CpuRam: 2048
+  Energy: -200

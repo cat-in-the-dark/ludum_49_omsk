@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2affe6371ad1747e48b061a774366cfb, type: 3}
-  m_Name: PW450
+  m_Script: {fileID: 11500000, guid: 76e383b4ec4e542a3ac27f63e189550d, type: 3}
+  m_Name: CPU-Xeon-2697
   m_EditorClassIdentifier: 
-  Name: PW 450
-  Price: 100
-  Energy: 450
+  Name: Xeon E5-2697
+  Price: 16384
+  CpuPower: 2048
+  Energy: -400

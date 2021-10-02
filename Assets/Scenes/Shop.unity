@@ -237,17 +237,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ramParts:
   - {fileID: 11400000, guid: 0b71a16f9d0574329adb719c3ffccc25, type: 2}
+  - {fileID: 11400000, guid: 80964a12315e34b58a1c34574fd52b55, type: 2}
+  - {fileID: 11400000, guid: 295228629ef1a416c967b9fda5b36766, type: 2}
+  - {fileID: 11400000, guid: f0c92da23e1c64f54a9e0eaa3ef3a8a4, type: 2}
+  - {fileID: 11400000, guid: 9e1edede14d5a457fbd3821c48594fa6, type: 2}
   cpuParts:
+  - {fileID: 11400000, guid: ecbb4e73b6b264944883ef08c3dd9d80, type: 2}
+  - {fileID: 11400000, guid: 34da8bf9a68954954858e453a776774f, type: 2}
+  - {fileID: 11400000, guid: da4a1423525034662a6c18c952667ee5, type: 2}
+  - {fileID: 11400000, guid: 6814a608dbeea4c85a6f9e030f389cd6, type: 2}
+  - {fileID: 11400000, guid: 004d3d7234a1e42b3a3d317160cd0ed0, type: 2}
+  - {fileID: 11400000, guid: 73883e49715414fd59a4c7aa18d9536c, type: 2}
+  - {fileID: 11400000, guid: 342fe60c965e14b3ebed526adb241225, type: 2}
+  - {fileID: 11400000, guid: 3da501ddcda5043e1bbc360e6acd92c1, type: 2}
+  - {fileID: 11400000, guid: f1b31c79ab2404b9a91307343a4cb0bf, type: 2}
+  - {fileID: 11400000, guid: 14197b1bd0f9f42f38be33ddba5e92f7, type: 2}
   - {fileID: 11400000, guid: ecbb4e73b6b264944883ef08c3dd9d80, type: 2}
   gpuParts:
   - {fileID: 11400000, guid: eaa850f42df7f472fa2da8bc98ff1bfc, type: 2}
   - {fileID: 11400000, guid: 2ed620114e97b4ff787d44c7e5cebcc4, type: 2}
+  - {fileID: 11400000, guid: 5d5f59aadca7648efb0f72cf7d913672, type: 2}
+  - {fileID: 11400000, guid: ce30f067beb864031ba8eef5063e9ee4, type: 2}
+  - {fileID: 11400000, guid: 4487066049ccb41a0a7d0af3aaacf6e6, type: 2}
+  - {fileID: 11400000, guid: b4427a2931193418cb17c21e2592faff, type: 2}
+  - {fileID: 11400000, guid: 13d371f731fd4403fb4d767aa224b2ca, type: 2}
+  - {fileID: 11400000, guid: fabe5db53bb2e48c29bc5d2a4ba4d0fb, type: 2}
+  - {fileID: 11400000, guid: aee07deac9746449da48d922e381cd77, type: 2}
   diskParts:
   - {fileID: 11400000, guid: a45a02a08a7bc4e978f92116fd22130c, type: 2}
+  - {fileID: 11400000, guid: f6cb8c120cc134190a6ad61efc019b0b, type: 2}
+  - {fileID: 11400000, guid: 4ba8c4693b42d4fcf860377bb1c38467, type: 2}
+  - {fileID: 11400000, guid: a998aafd43190430da6213aba84978d7, type: 2}
+  - {fileID: 11400000, guid: b27ed8f40f8c54579956477b8667b4d2, type: 2}
+  - {fileID: 11400000, guid: 0c58269a382084d3fa60a570a25db32a, type: 2}
   powerSupplyParts:
   - {fileID: 11400000, guid: 0e7f36466cff348468b5be3fdc3b786d, type: 2}
+  - {fileID: 11400000, guid: 8c030a53704c34063b45361a034e338d, type: 2}
+  - {fileID: 11400000, guid: 3793a6cfdb5c545d4a369865a60dbf24, type: 2}
+  - {fileID: 11400000, guid: 9d7886df5dcfc4ad3b64f4ddd190f6de, type: 2}
+  - {fileID: 11400000, guid: 012fd887777924413bfa57c68a4aa4bc, type: 2}
   motherBoardParts:
   - {fileID: 11400000, guid: 1160da12c0e814c04ba893312670cb26, type: 2}
+  - {fileID: 11400000, guid: 403c14fb614aa425a96918611efc775d, type: 2}
+  - {fileID: 11400000, guid: 3fa7113ce054e4ae4bc2cfec10dcf475, type: 2}
+  - {fileID: 11400000, guid: a4e45c7a0775b484c85981e5eb228c6c, type: 2}
 --- !u!4 &1695927574
 Transform:
   m_ObjectHideFlags: 0

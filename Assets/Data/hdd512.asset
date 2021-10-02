@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b726d12506e449f5a1b5a1aa2f4bb43, type: 3}
-  m_Name: hdd512
+  m_Name: HDD512
   m_EditorClassIdentifier: 
-  Name: HDD 512
-  Price: 100
-  DiskSize: 512
-  DiskSpeed: 100
-  Energy: -10
+  Name: HDD 512GB
+  Price: 64
+  DiskSize: 64
+  Energy: -5
