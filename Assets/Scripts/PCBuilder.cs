@@ -12,10 +12,11 @@ public class PCBuilder : MonoBehaviour
 
     private PC buildingPC;
 
-    // Start is called before the first frame update
     void Start()
     {
         pcManager = PCManager.GetComponent<PCManager>();
+
+        buildingPC = new PC();
     }
 
     void Update() {
@@ -24,6 +25,10 @@ public class PCBuilder : MonoBehaviour
 
     public void SetMotherboard(MotherBoardPart motherboard) {
         buildingPC.motherBoard = motherboard;
+    }
+
+    public void SetPowerSupply(PowerSupplyPart powerSupply) {
+        buildingPC.powerSupply = powerSupply;
     }
 
     void BuildPC() {

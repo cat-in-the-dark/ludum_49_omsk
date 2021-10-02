@@ -1311,6 +1311,7 @@ GameObject:
   - component: {fileID: 721864515}
   - component: {fileID: 721864517}
   - component: {fileID: 721864516}
+  - component: {fileID: 721864518}
   m_Layer: 5
   m_Name: Power Supply
   m_TagString: Untagged
@@ -1377,6 +1378,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721864514}
   m_CullTransparentMesh: 1
+--- !u!114 &721864518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721864514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44d2fcd6a26c4be29efd5d9bd8cd31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PCBuilder: {fileID: 885403195}
+  shopManager: {fileID: 24202151}
+  nameTextLabel: {fileID: 1418228687}
+  priceTextLabel: {fileID: 1956990833}
+  specsTextLabel: {fileID: 1633713104}
+  nextPowerSupply: {fileID: 1418575674}
+  prevPowerSupply: {fileID: 322265546}
 --- !u!1 &751131166
 GameObject:
   m_ObjectHideFlags: 0

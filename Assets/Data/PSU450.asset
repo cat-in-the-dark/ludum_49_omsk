@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2affe6371ad1747e48b061a774366cfb, type: 3}
   m_Name: PSU450
   m_EditorClassIdentifier: 
-  Name: PSU 450WT
+  Name: PSU1
   Price: 512
   Energy: 450
