@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e383b4ec4e542a3ac27f63e189550d, type: 3}
-  m_Name: Pentium
+  m_Script: {fileID: 11500000, guid: ee7ac9a212e254cbabf15f6c82bfde24, type: 3}
+  m_Name: GPU1060
   m_EditorClassIdentifier: 
-  Name: Pentium
-  Price: 100
-  CpuPower: 20
-  Energy: -30
+  Name: Nvidia GTX 1060
+  Price: 1000
+  CudaPower: 400
+  CudaRam: 4
+  Energy: -300

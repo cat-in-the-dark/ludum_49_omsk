@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d250aafecd56d48c884cb9c91a50b50d, type: 3}
-  m_Name: GPU-GTX-710
+  m_Script: {fileID: 11500000, guid: c6474ba6b771c4d96bbdc6284ca4b9a8, type: 3}
+  m_Name: MB1
   m_EditorClassIdentifier: 
-  Name: Nvidia GTX 710
-  Type: 0
-  Price: 200
-  CudaPower: 100
-  CudaRam: 2
-  CpuPower: 0
-  CpuRam: 0
-  DiskSize: 0
-  DiskSpeed: 0
-  Energy: 0
+  Name: MB 1
+  Price: 100
+  CpuSlots: 1
+  RamSlots: 2
+  GpuSlots: 1
+  DiskSlots: 2
