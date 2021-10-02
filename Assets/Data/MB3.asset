@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6474ba6b771c4d96bbdc6284ca4b9a8, type: 3}
   m_Name: MB3
   m_EditorClassIdentifier: 
-  Name: MB 4GPU 1CPU 4RAM 8HDD
+  Name: MB3
   Price: 2048
   CpuSlots: 1
   RamSlots: 4

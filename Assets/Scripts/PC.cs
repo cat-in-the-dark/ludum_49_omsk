@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PC : MonoBehaviour
 {
-    public string PCName;
     public Currency currentCurrency;
     public MotherBoardPart motherBoard;
     public PowerSupplyPart powerSupply;
@@ -46,20 +45,20 @@ public class PC : MonoBehaviour
         return false;
     }
 
-    public void RemoveCpu(int index) {
-        cpuSlots.RemoveAt(index);
+    public void ReplaceCpu(CpuPart cpuPart, int index) {
+        cpuSlots[index] = cpuPart;
     }
 
-    public void RemoveRam(int index) {
-        ramSlots.RemoveAt(index);
+    public void ReplaceRam(RamPart ramPart, int index) {
+        ramSlots[index] = ramPart;
     }
 
-    public void RemoveGpu(int index) {
-        gpuSlots.RemoveAt(index);
+    public void ReplaceGpu(GpuPart gpuPart, int index) {
+        gpuSlots[index] = gpuPart;
     }
 
-    public void RemoveDisk(int index) {
-        diskSlots.RemoveAt(index);
+    public void ReplaceDisk(DiskPart diskPart, int index) {
+        diskSlots[index] = diskPart;
     }
 
     public List<CpuPart> GetCpuSlots() {

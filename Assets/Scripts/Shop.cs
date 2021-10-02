@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField]
-    List<RamPart> ramParts;
-    
-    [SerializeField]
-    List<CpuPart> cpuParts;
-    
-    [SerializeField]
-    List<GpuPart> gpuParts;
-
-    [SerializeField]
-    List<DiskPart> diskParts;
-
-    [SerializeField]
-    List<PowerSupplyPart> powerSupplyParts;
-
-    [SerializeField]
-    List<MotherBoardPart> motherBoardParts;
+    public List<RamPart> ramParts;
+    public List<CpuPart> cpuParts;
+    public List<GpuPart> gpuParts;
+    public List<DiskPart> diskParts;
+    public List<PowerSupplyPart> powerSupplyParts;
+    public List<MotherBoardPart> motherBoardParts;
 
     // Start is called before the first frame update
     void Start()

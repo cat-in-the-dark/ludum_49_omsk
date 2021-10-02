@@ -6,6 +6,8 @@ public class PCBuilder : MonoBehaviour
 {
     public GameObject PCManager;
 
+    public GameObject PCPartViewPrefab;
+
     private PCManager pcManager;
 
     private PC buildingPC;
@@ -14,6 +16,14 @@ public class PCBuilder : MonoBehaviour
     void Start()
     {
         pcManager = PCManager.GetComponent<PCManager>();
+    }
+
+    void Update() {
+
+    }
+
+    public void SetMotherboard(MotherBoardPart motherboard) {
+        buildingPC.motherBoard = motherboard;
     }
 
     void BuildPC() {
