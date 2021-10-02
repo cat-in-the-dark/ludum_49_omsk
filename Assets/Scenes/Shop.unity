@@ -235,7 +235,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edabf2a4cc5124956b8cc48d67e72a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcParts: []
+  ramParts:
+  - {fileID: 11400000, guid: 0b71a16f9d0574329adb719c3ffccc25, type: 2}
+  cpuParts:
+  - {fileID: 11400000, guid: ecbb4e73b6b264944883ef08c3dd9d80, type: 2}
+  gpuParts:
+  - {fileID: 11400000, guid: eaa850f42df7f472fa2da8bc98ff1bfc, type: 2}
+  - {fileID: 11400000, guid: 2ed620114e97b4ff787d44c7e5cebcc4, type: 2}
+  diskParts:
+  - {fileID: 11400000, guid: a45a02a08a7bc4e978f92116fd22130c, type: 2}
+  powerSupplyParts:
+  - {fileID: 11400000, guid: 0e7f36466cff348468b5be3fdc3b786d, type: 2}
+  motherBoardParts:
+  - {fileID: 11400000, guid: 1160da12c0e814c04ba893312670cb26, type: 2}
 --- !u!4 &1695927574
 Transform:
   m_ObjectHideFlags: 0
