@@ -33,7 +33,6 @@ public class MotherboardPicker : MonoBehaviour
         prevMotherboard.onClick.AddListener(ClickOnPrev);
 
         currentMotherboard = shop.motherBoardParts[currentMbIndex];
-        pcBuilder.SetMotherboard(currentMotherboard);
     }
 
     void Update()

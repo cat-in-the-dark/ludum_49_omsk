@@ -5,18 +5,21 @@ using UnityEngine;
 public class PCBuilder : MonoBehaviour
 {
     public GameObject PCManager;
+    public GameObject shopManager;
 
     public GameObject PCPartViewPrefab;
 
     private PCManager pcManager;
+    private Shop shop;
 
     private PC buildingPC;
 
     void Start()
     {
         pcManager = PCManager.GetComponent<PCManager>();
+        shop = shopManager.GetComponent<Shop>();
 
-        buildingPC = new PC();
+        buildingPC = new PC(shop.motherBoardParts[0], shop.powerSupplyParts[0]);
     }
 
     void Update() {

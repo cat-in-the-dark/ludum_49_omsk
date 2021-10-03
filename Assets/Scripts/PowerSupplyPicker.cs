@@ -33,7 +33,6 @@ public class PowerSupplyPicker : MonoBehaviour
         prevPowerSupply.onClick.AddListener(ClickOnPrev);
 
         currentPowerSupply = shop.powerSupplyParts[currentPsIndex];
-        pcBuilder.SetPowerSupply(currentPowerSupply);
     }
 
     void Update()

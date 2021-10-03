@@ -13,6 +13,11 @@ public class PC
     private List<GpuPart> gpuSlots = new List<GpuPart>();
     private List<DiskPart> diskSlots = new List<DiskPart>();
 
+    public PC(MotherBoardPart motherBoard, PowerSupplyPart powerSupply) {
+        this.motherBoard = motherBoard;
+        this.powerSupply = powerSupply;
+    }
+
     public bool AddCpu(CpuPart cpuPart)
     {
         if (cpuSlots.Count < motherBoard.CpuSlots)

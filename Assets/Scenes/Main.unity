@@ -1584,6 +1584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PCManager: {fileID: 1519790346}
+  shopManager: {fileID: 24202151}
   PCPartViewPrefab: {fileID: 367249339997337703, guid: 7afb3b49057c041f0ab46a8a259047f1, type: 3}
 --- !u!1 &945224607
 GameObject:
