@@ -55,19 +55,19 @@ public class PCManager : MonoBehaviour
         var scores = new CurrencyScores();
         foreach (Currency cur in currencies)
         {
-            if (cur.name == "BTC")
+            if (cur.currencyName == "BTC")
             {
                 scores.BTC = cur.USDRate;
             }
-            if (cur.name == "DOGE")
+            if (cur.currencyName == "DOGE")
             {
                 scores.DOGE = cur.USDRate;
             }
-            if (cur.name == "LTC")
+            if (cur.currencyName == "LTC")
             {
                 scores.LTC = cur.USDRate;
             }
-            if (cur.name == "BRST")
+            if (cur.currencyName == "BRST")
             {
                 scores.BRST = cur.USDRate;
             }
@@ -76,21 +76,22 @@ public class PCManager : MonoBehaviour
         for (int i = 0; i < currancyEvent.names.Count; i++)
         {
             var name = currancyEvent.names[i];
+            double mul = currancyEvent.multipliers[i];
             if (name == "BTC")
             {
-                scores.BTC *= currancyEvent.multipliers[i];
+                scores.BTC *= mul;
             }
             if (name == "DOGE")
             {
-                scores.DOGE *= currancyEvent.multipliers[i];
+                scores.DOGE *= mul;
             }
             if (name == "LTC")
             {
-                scores.LTC *= currancyEvent.multipliers[i];
+                scores.LTC *= mul;
             }
             if (name == "BRST")
             {
-                scores.BRST *= currancyEvent.multipliers[i];
+                scores.BRST *= mul;
             }
         }
 
@@ -113,7 +114,7 @@ public class PCManager : MonoBehaviour
     {
         var idx = Random.Range(0, events.Count);
         SetEvent(idx);
-        float nextSpawnIn = Random.Range(5.0f, 10.0f);
+        float nextSpawnIn = Random.Range(10.0f, 30.0f);
         Invoke("SpawnEvent", nextSpawnIn);
     }
 
