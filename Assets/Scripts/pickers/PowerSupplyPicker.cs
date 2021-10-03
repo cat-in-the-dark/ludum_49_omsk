@@ -35,6 +35,11 @@ public class PowerSupplyPicker : MonoBehaviour
         currentPowerSupply = shop.powerSupplyParts[currentPsIndex];
     }
 
+    private void OnDisable() {
+        currentPsIndex = 0;
+        currentPowerSupply = shop.powerSupplyParts[currentPsIndex];
+    }
+
     void Update()
     {
         nameTextLabel.text = currentPowerSupply.Name;
