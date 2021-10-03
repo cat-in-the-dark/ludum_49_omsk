@@ -9,6 +9,7 @@ public class NewsFeed : MonoBehaviour
     const double timePerSymbol = 0.02;
 
     private Text textField;
+    public GameObject newsScreenBackground;
     public GameObject newsScreenHolder;
 
     public void SetText(string text_)
@@ -16,6 +17,7 @@ public class NewsFeed : MonoBehaviour
         text = text_;
         showTextLength = 1;
         timer = 0;
+        newsScreenBackground.SetActive(true);
         newsScreenHolder.SetActive(true);
     }
 
@@ -39,6 +41,7 @@ public class NewsFeed : MonoBehaviour
 
     public void HideNews()
     {
+        newsScreenBackground.SetActive(false);
         newsScreenHolder.SetActive(false);
     }
 }
