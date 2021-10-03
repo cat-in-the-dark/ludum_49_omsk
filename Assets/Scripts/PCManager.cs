@@ -5,6 +5,7 @@ using System.Linq;
 
 public class PCManager : MonoBehaviour
 {
+    private Currency currency;
     private List<PC> computers = new List<PC>();
     [SerializeField]
     private double incomePerSec = 0;
@@ -23,7 +24,7 @@ public class PCManager : MonoBehaviour
     // And update current income per sec and balance
     void UpdateBalance()
     {
-        incomePerSec = computers.Aggregate(0.0, (acc, pc) => acc + pc.GetDollarsPerSec());
+        incomePerSec = computers.Aggregate(0.0, (acc, pc) => acc + pc.GetDollarsPerSecFor(currency));
         balance += incomePerSec * Time.deltaTime;
     }
 

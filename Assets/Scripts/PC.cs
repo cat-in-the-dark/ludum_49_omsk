@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PC
 {
-    public Currency currentCurrency;
     public MotherBoardPart motherBoard;
     public PowerSupplyPart powerSupply;
 
@@ -114,11 +113,6 @@ public class PC
     {
         // Check we have at least a CPU, a RAM and enough power
         return CheckPower() && motherBoard != null && cpuSlots.Count() != 0 && ramSlots.Count() != 0;
-    }
-
-    public double GetDollarsPerSec()
-    {
-        return GetDollarsPerSecFor(currentCurrency);
     }
 
     public double GetDollarsPerSecFor(Currency currency)
