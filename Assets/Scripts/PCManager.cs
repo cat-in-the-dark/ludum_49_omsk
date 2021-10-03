@@ -13,9 +13,9 @@ public class CurrencyScores
 
 public class PCManager : MonoBehaviour
 {
+    double JAM_MUL = 10;
     public NewsFeed newsFeed;
     public CurrancyEvent currancyEvent;
-    public Currency currency;
     private List<PC> computers = new List<PC>();
     [SerializeField]
     private double incomePerSec = 0;
@@ -29,29 +29,14 @@ public class PCManager : MonoBehaviour
 
     public List<CurrancyEvent> events = new List<CurrancyEvent>();
 
-    public void MinusBalance(double value) {
+    public void MinusBalance(double value)
+    {
         balance -= value;
     }
 
     public void AddComputer(PC computer)
     {
         computers.Add(computer);
-    }
-
-    // Update is called once per frame
-    // And update current income per sec and balance
-    double GetCurrencyMul()
-    {
-        // yes it's O(n) lookup because unity doesn't support Dictionary in ScriptableObjects
-        var idx = currancyEvent.names.FindIndex((el) => el == currency.currencyName);
-        if (idx >= 0 && idx < currancyEvent.multipliers.Count)
-        {
-            return currancyEvent.multipliers[idx];
-        }
-        else
-        {
-            return 1;
-        }
     }
 
     public CurrencyScores GetCurrencyScores()
@@ -104,8 +89,19 @@ public class PCManager : MonoBehaviour
 
     void UpdateBalance()
     {
-        incomePerSec = GetCurrencyMul() * computers.Aggregate(0.0, (acc, pc) => acc + pc.GetDollarsPerSecFor(currency));
-        balance += incomePerSec * Time.deltaTime;
+        double icomeSum = 0;
+        var scores = GetCurrencyScores();
+        foreach (Currency cur in currencies)
+        {
+            double mul = 1;
+            if (cur.currencyName == "BRST") mul = scores.BRST;
+            if (cur.currencyName == "BTC") mul = scores.BTC;
+            if (cur.currencyName == "DOGE") mul = scores.DOGE;
+            if (cur.currencyName == "LTC") mul = scores.LTC;
+            icomeSum += mul * computers.Aggregate(0.0, (acc, pc) => acc + pc.GetDollarsPerSecFor(cur));
+        }
+        incomePerSec = icomeSum;
+        balance += JAM_MUL * incomePerSec * Time.deltaTime;
     }
 
     void SetEvent(int idx)
@@ -130,6 +126,6 @@ public class PCManager : MonoBehaviour
     void Start()
     {
         SetEvent(0);
-        Invoke("SpawnEvent", 5.0f);
+        Invoke("SpawnEvent", 30.0f);
     }
 }
