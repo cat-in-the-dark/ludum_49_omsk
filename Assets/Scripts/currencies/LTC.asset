@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79cfa33884edc4a5dbce6ecaced9d8a6, type: 3}
-  m_Name: Bitcoin
+  m_Name: LTC
   m_EditorClassIdentifier: 
-  currencyName: BTC
-  USDRate: 0.2
-  cpuScore: 0
+  currencyName: LTC
+  USDRate: 0.4
+  cpuScore: 0.25
   ramScore: 0
-  gpuScore: 0.5
+  gpuScore: 0
   diskScore: 0
