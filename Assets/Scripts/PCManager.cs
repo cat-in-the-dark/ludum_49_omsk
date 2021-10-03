@@ -29,6 +29,10 @@ public class PCManager : MonoBehaviour
 
     public List<CurrancyEvent> events = new List<CurrancyEvent>();
 
+    public void MinusBalance(double value) {
+        balance -= value;
+    }
+
     public void AddComputer(PC computer)
     {
         computers.Add(computer);

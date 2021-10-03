@@ -125,6 +125,7 @@ public class PCBuilder : MonoBehaviour
 
     private void Purchase() {
         pcManager.AddComputer(buildingPC);
+        pcManager.MinusBalance(buildingPC.GetPrice());
         gameObject.SetActive(false);
     }
 
