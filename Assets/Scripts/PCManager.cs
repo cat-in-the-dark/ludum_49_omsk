@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+public class CurrencyScores
+{
+    public double BTC;
+    public double LTC;
+    public double BRST;
+    public double DOGE;
+}
+
 public class PCManager : MonoBehaviour
 {
     public NewsFeed newsFeed;
@@ -16,6 +24,8 @@ public class PCManager : MonoBehaviour
     [SerializeField]
     private double balance = 0.0;
     public double Balance => balance;
+
+    public List<Currency> currencies;
 
     public List<CurrancyEvent> events = new List<CurrancyEvent>();
 
@@ -38,6 +48,53 @@ public class PCManager : MonoBehaviour
         {
             return 1;
         }
+    }
+
+    public CurrencyScores GetCurrencyScores()
+    {
+        var scores = new CurrencyScores();
+        foreach (Currency cur in currencies)
+        {
+            if (cur.name == "BTC")
+            {
+                scores.BTC = cur.USDRate;
+            }
+            if (cur.name == "DOGE")
+            {
+                scores.DOGE = cur.USDRate;
+            }
+            if (cur.name == "LTC")
+            {
+                scores.LTC = cur.USDRate;
+            }
+            if (cur.name == "BRST")
+            {
+                scores.BRST = cur.USDRate;
+            }
+        }
+
+        for (int i = 0; i < currancyEvent.names.Count; i++)
+        {
+            var name = currancyEvent.names[i];
+            if (name == "BTC")
+            {
+                scores.BTC *= currancyEvent.multipliers[i];
+            }
+            if (name == "DOGE")
+            {
+                scores.DOGE *= currancyEvent.multipliers[i];
+            }
+            if (name == "LTC")
+            {
+                scores.LTC *= currancyEvent.multipliers[i];
+            }
+            if (name == "BRST")
+            {
+                scores.BRST *= currancyEvent.multipliers[i];
+            }
+        }
+
+        return scores;
     }
 
     void UpdateBalance()

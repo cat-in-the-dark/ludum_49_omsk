@@ -3850,8 +3850,26 @@ MonoBehaviour:
   currency: {fileID: 11400000, guid: 80e9ff94851384c0d94d3fc12e640ff3, type: 2}
   incomePerSec: 0
   balance: 4000
+  currencies:
+  - {fileID: 11400000, guid: 80e9ff94851384c0d94d3fc12e640ff3, type: 2}
+  - {fileID: 11400000, guid: 9e4e636b9d061409d951b57142f6d33d, type: 2}
+  - {fileID: 11400000, guid: 848a6f144bc59446fa5243ba690f31b2, type: 2}
+  - {fileID: 11400000, guid: 7a3f003d83467427dae0e1b8084b31a5, type: 2}
   events:
   - {fileID: 11400000, guid: 84d877c0ac7b14e479016d9ecae810fd, type: 2}
+  - {fileID: 11400000, guid: 455a1bb311d554359b3c4ed4e45986b0, type: 2}
+  - {fileID: 11400000, guid: 9ecf05b32b3d24ff28c65a69a146fbc6, type: 2}
+  - {fileID: 11400000, guid: 01bf01032e4994db49ae930b6850c4a6, type: 2}
+  - {fileID: 11400000, guid: 7548fb656395f45c19faadb6a3d9fc2a, type: 2}
+  - {fileID: 11400000, guid: 27b122d24f312410ba3e7340e61f31dd, type: 2}
+  - {fileID: 11400000, guid: 10418ed89dac947c9ac1daba205f85f9, type: 2}
+  - {fileID: 11400000, guid: ccc6064a641124b28969896303455b6d, type: 2}
+  - {fileID: 11400000, guid: 9a09f366da4594362b69a790ab58c76e, type: 2}
+  - {fileID: 11400000, guid: 8f71c577316b14374a4821c13d30532c, type: 2}
+  - {fileID: 11400000, guid: 800d40eb1f463467bb2ab552baac5e5c, type: 2}
+  - {fileID: 11400000, guid: 2818ed77ac133410bb6b64b4f07627c1, type: 2}
+  - {fileID: 11400000, guid: ce5f0bafcda324c9fa59ab452cdf0c66, type: 2}
+  - {fileID: 11400000, guid: 0d5ae2c29b1254e728e29e0a94a4280f, type: 2}
 --- !u!4 &1519790348
 Transform:
   m_ObjectHideFlags: 0
