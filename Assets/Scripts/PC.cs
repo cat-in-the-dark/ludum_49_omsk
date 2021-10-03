@@ -4,57 +4,30 @@ using UnityEngine;
 
 public class PC
 {
-    public MotherBoardPart motherBoard;
     public PowerSupplyPart powerSupply;
 
+    private MotherBoardPart motherBoard;
     private List<CpuPart> cpuSlots = new List<CpuPart>();
     private List<RamPart> ramSlots = new List<RamPart>();
     private List<GpuPart> gpuSlots = new List<GpuPart>();
     private List<DiskPart> diskSlots = new List<DiskPart>();
 
     public PC(MotherBoardPart motherBoard, PowerSupplyPart powerSupply) {
-        this.motherBoard = motherBoard;
+        SetMotherboard(motherBoard);
         this.powerSupply = powerSupply;
     }
 
-    public bool AddCpu(CpuPart cpuPart)
-    {
-        if (cpuSlots.Count < motherBoard.CpuSlots)
-        {
-            cpuSlots.Add(cpuPart);
-            return true;
-        }
-        return false;
+    public MotherBoardPart GetMotherBoard() {
+        return motherBoard;
     }
 
-    public bool AddRam(RamPart ramPart)
-    {
-        if (ramSlots.Count < motherBoard.RamSlots)
-        {
-            ramSlots.Add(ramPart);
-            return true;
-        }
-        return false;
-    }
+    public void SetMotherboard(MotherBoardPart motherboard) {
+        this.motherBoard = motherboard;
 
-    public bool AddGpu(GpuPart gpuPart)
-    {
-        if (gpuSlots.Count < motherBoard.GpuSlots)
-        {
-            gpuSlots.Add(gpuPart);
-            return true;
-        }
-        return false;
-    }
-
-    public bool AddDisk(DiskPart diskPart)
-    {
-        if (diskSlots.Count < motherBoard.DiskSlots)
-        {
-            diskSlots.Add(diskPart);
-            return true;
-        }
-        return false;
+        cpuSlots = new List<CpuPart>(new CpuPart[motherBoard.CpuSlots]);
+        ramSlots = new List<RamPart>(new RamPart[motherBoard.RamSlots]);
+        gpuSlots = new List<GpuPart>(new GpuPart[motherBoard.GpuSlots]);
+        diskSlots = new List<DiskPart>(new DiskPart[motherBoard.DiskSlots]);
     }
 
     public void ReplaceCpu(CpuPart cpuPart, int index)
@@ -97,16 +70,32 @@ public class PC
         return diskSlots;
     }
 
-    public bool CheckPower()
-    {
-        double psuPower = powerSupply.Energy;
-
+    public double GetPower() {
         double cpuPower = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + cpu.Energy);
         double ramPower = ramSlots.Aggregate(0.0, (acc, ram) => acc + ram.Energy);
         double gpuPower = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + gpu.Energy);
         double diskPower = diskSlots.Aggregate(0.0, (acc, disk) => acc + disk.Energy);
 
-        return psuPower >= (cpuPower + ramPower + gpuPower + diskPower);
+        return cpuPower + ramPower + gpuPower + diskPower;
+    }
+
+    public double GetPrice() {
+        double mbPrice = motherBoard.Price;
+        double psuPrice = powerSupply.Price;
+
+        double cpuPrice = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + cpu.Price);
+        double ramPrice = ramSlots.Aggregate(0.0, (acc, ram) => acc + ram.Price);
+        double gpuPrice = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + gpu.Price);
+        double diskPrice = diskSlots.Aggregate(0.0, (acc, disk) => acc + disk.Price);
+
+        return mbPrice + psuPrice + cpuPrice + ramPrice + gpuPrice + diskPrice;
+    }
+
+    public bool CheckPower()
+    {
+        double psuPower = powerSupply.Energy;
+
+        return psuPower >= GetPower();
     }
 
     public bool CanMine()

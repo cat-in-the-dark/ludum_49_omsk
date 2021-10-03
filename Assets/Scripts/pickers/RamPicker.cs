@@ -8,6 +8,7 @@ public class RamPicker : MonoBehaviour
 {
     public GameObject PCBuilder;
     public GameObject shopManager;
+    public int ramIndex;
 
     [Header("Text Labels")]
     public TextMeshProUGUI nameTextLabel;
@@ -33,6 +34,7 @@ public class RamPicker : MonoBehaviour
         prevRAM.onClick.AddListener(ClickOnPrev);
 
         currentRam = shop.ramParts[currentRamIndex];
+        pcBuilder.SetRam(currentRam, ramIndex);
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class RamPicker : MonoBehaviour
         if (currentRamIndex < shop.ramParts.Count - 1) {
             currentRamIndex++;
             currentRam = shop.ramParts[currentRamIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetRam(currentRam, ramIndex);
         }
     }
 
@@ -56,7 +58,7 @@ public class RamPicker : MonoBehaviour
         if (currentRamIndex > 0) {
             currentRamIndex--;
             currentRam = shop.ramParts[currentRamIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetRam(currentRam, ramIndex);
         }
     }
 }

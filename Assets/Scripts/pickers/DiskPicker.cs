@@ -8,6 +8,7 @@ public class DiskPicker : MonoBehaviour
 {
     public GameObject PCBuilder;
     public GameObject shopManager;
+    public int diskIndex;
 
     [Header("Text Labels")]
     public TextMeshProUGUI nameTextLabel;
@@ -33,6 +34,7 @@ public class DiskPicker : MonoBehaviour
         prevDisk.onClick.AddListener(ClickOnPrev);
 
         currentDisk = shop.diskParts[currentdDiskIndex];
+        pcBuilder.SetDisk(currentDisk, diskIndex);
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class DiskPicker : MonoBehaviour
         if (currentdDiskIndex < shop.diskParts.Count - 1) {
             currentdDiskIndex++;
             currentDisk = shop.diskParts[currentdDiskIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetDisk(currentDisk, diskIndex);
         }
     }
 
@@ -56,7 +58,7 @@ public class DiskPicker : MonoBehaviour
         if (currentdDiskIndex > 0) {
             currentdDiskIndex--;
             currentDisk = shop.diskParts[currentdDiskIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetDisk(currentDisk, diskIndex);
         }
     }
 }

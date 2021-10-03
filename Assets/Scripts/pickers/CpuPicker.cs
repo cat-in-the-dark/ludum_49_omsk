@@ -8,6 +8,7 @@ public class CpuPicker : MonoBehaviour
 {
     public GameObject PCBuilder;
     public GameObject shopManager;
+    public int cpuIndex;
 
     [Header("Text Labels")]
     public TextMeshProUGUI nameTextLabel;
@@ -33,6 +34,7 @@ public class CpuPicker : MonoBehaviour
         prevCPU.onClick.AddListener(ClickOnPrev);
 
         currentCpu = shop.cpuParts[currentCpuIndex];
+        pcBuilder.SetCpu(currentCpu, cpuIndex);
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class CpuPicker : MonoBehaviour
         if (currentCpuIndex < shop.cpuParts.Count - 1) {
             currentCpuIndex++;
             currentCpu = shop.cpuParts[currentCpuIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetCpu(currentCpu, cpuIndex);
         }
     }
 
@@ -56,7 +58,7 @@ public class CpuPicker : MonoBehaviour
         if (currentCpuIndex > 0) {
             currentCpuIndex--;
             currentCpu = shop.cpuParts[currentCpuIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetCpu(currentCpu, cpuIndex);
         }
     }
 }

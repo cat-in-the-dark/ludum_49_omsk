@@ -8,6 +8,7 @@ public class GpuPicker : MonoBehaviour
 {
     public GameObject PCBuilder;
     public GameObject shopManager;
+    public int gpuIndex;
 
     [Header("Text Labels")]
     public TextMeshProUGUI nameTextLabel;
@@ -33,6 +34,7 @@ public class GpuPicker : MonoBehaviour
         prevGPU.onClick.AddListener(ClickOnPrev);
 
         currentGpu = shop.gpuParts[currentGpuIndex];
+        pcBuilder.SetGpu(currentGpu, gpuIndex);
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class GpuPicker : MonoBehaviour
         if (currentGpuIndex < shop.gpuParts.Count - 1) {
             currentGpuIndex++;
             currentGpu = shop.gpuParts[currentGpuIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetGpu(currentGpu, gpuIndex);
         }
     }
 
@@ -56,7 +58,7 @@ public class GpuPicker : MonoBehaviour
         if (currentGpuIndex > 0) {
             currentGpuIndex--;
             currentGpu = shop.gpuParts[currentGpuIndex];
-            // pcBuilder.SetMotherboard(currentMotherboard);
+            pcBuilder.SetGpu(currentGpu, gpuIndex);
         }
     }
 }

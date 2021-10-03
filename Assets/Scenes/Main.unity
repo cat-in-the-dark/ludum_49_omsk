@@ -1590,6 +1590,9 @@ MonoBehaviour:
   ramViewPrefab: {fileID: 8740195537420357354, guid: f5b5442988da8466faa7aca6a5679683, type: 3}
   gpuViewPrefab: {fileID: 4904837262028527017, guid: 6450203e7d9c04b85a1aa414f05b0fc7, type: 3}
   diskViewPrefab: {fileID: 5877440079990705165, guid: 88709616af1094d499885da3668cd010, type: 3}
+  powerTextLabel: {fileID: 1182698792}
+  priceTextLabel: {fileID: 1809205787}
+  purchaseButton: {fileID: 1490062810}
 --- !u!1 &945224607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,8 +2981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d22c96c4576347efbed984b495ad58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currancyEvent: {fileID: 11400000, guid: 84d877c0ac7b14e479016d9ecae810fd, type: 2}
+  currency: {fileID: 11400000, guid: 80e9ff94851384c0d94d3fc12e640ff3, type: 2}
   incomePerSec: 0
   balance: 0
+  events:
+  - {fileID: 11400000, guid: 84d877c0ac7b14e479016d9ecae810fd, type: 2}
 --- !u!4 &1519790348
 Transform:
   m_ObjectHideFlags: 0

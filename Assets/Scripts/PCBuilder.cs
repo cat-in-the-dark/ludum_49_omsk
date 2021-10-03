@@ -1,6 +1,3 @@
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,6 +15,11 @@ public class PCBuilder : MonoBehaviour
     public GameObject gpuViewPrefab;
     public GameObject diskViewPrefab;
 
+    [Header("Purchase Data")]
+    public TextMeshProUGUI powerTextLabel;
+    public TextMeshProUGUI priceTextLabel;
+    public Button purchaseButton;
+
     private PCManager pcManager;
     private Shop shop;
     private Transform canvasTransform;
@@ -32,11 +34,12 @@ public class PCBuilder : MonoBehaviour
         canvasTransform = componentsCanvas.GetComponent<Transform>();
 
         buildingPC = new PC(shop.motherBoardParts[0], shop.powerSupplyParts[0]);
+        purchaseButton.onClick.AddListener(Purchase);
     }
 
     void Update() {
-        if (prevMotherboard != buildingPC.motherBoard) {
-            var motherboard = buildingPC.motherBoard;
+        if (prevMotherboard != buildingPC.GetMotherBoard()) {
+            var motherboard = buildingPC.GetMotherBoard();
 
             foreach (Transform picker in canvasTransform) {
                 GameObject.Destroy(picker.gameObject);
@@ -47,6 +50,7 @@ public class PCBuilder : MonoBehaviour
 
                 picker.PCBuilder = gameObject;
                 picker.shopManager = shopManager;
+                picker.cpuIndex = i;
 
                 var instantiatedPicker = Instantiate(picker);
                 instantiatedPicker.transform.SetParent(canvasTransform, false);
@@ -57,6 +61,7 @@ public class PCBuilder : MonoBehaviour
 
                 picker.PCBuilder = gameObject;
                 picker.shopManager = shopManager;
+                picker.ramIndex = i;
 
                 var instantiatedPicker = Instantiate(picker);
                 instantiatedPicker.transform.SetParent(canvasTransform, false);
@@ -67,6 +72,7 @@ public class PCBuilder : MonoBehaviour
 
                 picker.PCBuilder = gameObject;
                 picker.shopManager = shopManager;
+                picker.gpuIndex = i;
 
                 var instantiatedPicker = Instantiate(picker);
                 instantiatedPicker.transform.SetParent(canvasTransform, false);
@@ -77,6 +83,7 @@ public class PCBuilder : MonoBehaviour
 
                 picker.PCBuilder = gameObject;
                 picker.shopManager = shopManager;
+                picker.diskIndex = i;
 
                 var instantiatedPicker = Instantiate(picker);
                 instantiatedPicker.transform.SetParent(canvasTransform, false);
@@ -84,14 +91,53 @@ public class PCBuilder : MonoBehaviour
 
             prevMotherboard = motherboard;
         }
+
+        SetPowerData();
+        SetPriceData();
+
+        purchaseButton.interactable = buildingPC.CanMine();
+    }
+
+    private void SetPowerData() {
+        double pcPower = buildingPC.GetPower() * -1;
+        double psuPower = buildingPC.powerSupply.Energy;
+
+        powerTextLabel.text = string.Format("{0} W/{1} W", ((int) pcPower).ToString(), ((int) psuPower).ToString());
+    }
+
+    private void SetPriceData() {
+        double price = buildingPC.GetPrice();
+
+        priceTextLabel.text = string.Format("${0}", ((int) price).ToString());
+    }
+
+    private void Purchase() {
+        pcManager.AddComputer(buildingPC);
+        buildingPC = null;
     }
 
     public void SetMotherboard(MotherBoardPart motherboard) {
-        buildingPC.motherBoard = motherboard;
+        buildingPC.SetMotherboard(motherboard);
     }
 
     public void SetPowerSupply(PowerSupplyPart powerSupply) {
         buildingPC.powerSupply = powerSupply;
+    }
+
+    public void SetCpu(CpuPart cpu, int index) {
+        buildingPC.ReplaceCpu(cpu, index);
+    }
+
+    public void SetRam(RamPart ram, int index) {
+        buildingPC.ReplaceRam(ram, index);
+    }
+
+    public void SetGpu(GpuPart gpu, int index) {
+        buildingPC.ReplaceGpu(gpu, index);
+    }
+
+    public void SetDisk(DiskPart disk, int index) {
+        buildingPC.ReplaceDisk(disk, index);
     }
 
     void BuildPC() {
