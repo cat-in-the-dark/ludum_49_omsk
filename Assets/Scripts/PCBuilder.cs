@@ -45,6 +45,7 @@ public class PCBuilder : MonoBehaviour
 
     private void OnDisable() {
         buildingPC = null;
+        prevMotherboard = null;
 
         foreach (Transform picker in canvasTransform) {
             GameObject.Destroy(picker.gameObject);
