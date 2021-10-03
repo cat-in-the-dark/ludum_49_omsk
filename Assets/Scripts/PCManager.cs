@@ -5,6 +5,7 @@ using System.Linq;
 
 public class PCManager : MonoBehaviour
 {
+    public NewsFeed newsFeed;
     public CurrancyEvent currancyEvent;
     public Currency currency;
     private List<PC> computers = new List<PC>();
@@ -45,15 +46,17 @@ public class PCManager : MonoBehaviour
         balance += incomePerSec * Time.deltaTime;
     }
 
+    void SetEvent(int idx)
+    {
+        currancyEvent = events[idx];
+        newsFeed.SetText(currancyEvent.Text);
+    }
+
     void SpawnEvent()
     {
         var idx = Random.Range(0, events.Count);
-        currancyEvent = events[idx];
-
+        SetEvent(idx);
         float nextSpawnIn = Random.Range(5.0f, 10.0f);
-
-        Debug.Log("Spawning new event. Next in " + nextSpawnIn);
-
         Invoke("SpawnEvent", nextSpawnIn);
     }
 
@@ -64,6 +67,7 @@ public class PCManager : MonoBehaviour
 
     void Start()
     {
+        SetEvent(0);
         Invoke("SpawnEvent", 5.0f);
     }
 }
