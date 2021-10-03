@@ -37,6 +37,11 @@ public class NewsFeed : MonoBehaviour
             textField.text = text.Substring(0, showTextLength);
             showTextLength += 1;
         }
+
+        if (Input.GetButton("Jump") || Input.GetButton("Submit"))
+        {
+            HideNews();
+        }
     }
 
     public void HideNews()
