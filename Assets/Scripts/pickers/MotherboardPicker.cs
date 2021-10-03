@@ -35,6 +35,11 @@ public class MotherboardPicker : MonoBehaviour
         currentMotherboard = shop.motherBoardParts[currentMbIndex];
     }
 
+    private void OnDisable() {
+        currentMbIndex = 0;
+        currentMotherboard = shop.motherBoardParts[currentMbIndex];
+    }
+
     void Update()
     {
         nameTextLabel.text = currentMotherboard.Name;

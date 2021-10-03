@@ -71,10 +71,10 @@ public class PC
     }
 
     public double GetPower() {
-        double cpuPower = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + cpu.Energy);
-        double ramPower = ramSlots.Aggregate(0.0, (acc, ram) => acc + ram.Energy);
-        double gpuPower = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + gpu.Energy);
-        double diskPower = diskSlots.Aggregate(0.0, (acc, disk) => acc + disk.Energy);
+        double cpuPower = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + (cpu == null ? 0 : cpu.Energy));
+        double ramPower = ramSlots.Aggregate(0.0, (acc, ram) => acc + (ram == null ? 0 : ram.Energy));
+        double gpuPower = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + (gpu == null ? 0 : gpu.Energy));
+        double diskPower = diskSlots.Aggregate(0.0, (acc, disk) => acc + (disk == null ? 0 : disk.Energy));
 
         return cpuPower + ramPower + gpuPower + diskPower;
     }
@@ -83,10 +83,10 @@ public class PC
         double mbPrice = motherBoard.Price;
         double psuPrice = powerSupply.Price;
 
-        double cpuPrice = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + cpu.Price);
-        double ramPrice = ramSlots.Aggregate(0.0, (acc, ram) => acc + ram.Price);
-        double gpuPrice = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + gpu.Price);
-        double diskPrice = diskSlots.Aggregate(0.0, (acc, disk) => acc + disk.Price);
+        double cpuPrice = cpuSlots.Aggregate(0.0, (acc, cpu) => acc + (cpu == null ? 0 : cpu.Price));
+        double ramPrice = ramSlots.Aggregate(0.0, (acc, ram) => acc + (ram == null ? 0 : ram.Price));
+        double gpuPrice = gpuSlots.Aggregate(0.0, (acc, gpu) => acc + (gpu == null ? 0 : gpu.Price));
+        double diskPrice = diskSlots.Aggregate(0.0, (acc, disk) => acc + (disk == null ? 0 : disk.Price));
 
         return mbPrice + psuPrice + cpuPrice + ramPrice + gpuPrice + diskPrice;
     }
@@ -108,10 +108,10 @@ public class PC
     {
         if (!CanMine()) return 0;
 
-        double cpuPower = cpuSlots.Aggregate(0.0, (acc, obj) => acc + obj.CpuPower);
-        double ramPower = ramSlots.Aggregate(0.0, (acc, obj) => acc + obj.CpuRam);
-        double diskPower = diskSlots.Aggregate(0.0, (acc, obj) => acc + obj.DiskSize);
-        double gpuPower = gpuSlots.Aggregate(0.0, (acc, obj) => acc + obj.CudaPower);
+        double cpuPower = cpuSlots.Aggregate(0.0, (acc, obj) => acc + (obj == null ? 0 : obj.CpuPower));
+        double ramPower = ramSlots.Aggregate(0.0, (acc, obj) => acc + (obj == null ? 0 : obj.CpuRam));
+        double diskPower = diskSlots.Aggregate(0.0, (acc, obj) => acc + (obj == null ? 0 : obj.DiskSize));
+        double gpuPower = gpuSlots.Aggregate(0.0, (acc, obj) => acc + (obj == null ? 0 : obj.CudaPower));
 
         cpuPower *= currency.cpuScore;
         ramPower *= currency.ramScore;

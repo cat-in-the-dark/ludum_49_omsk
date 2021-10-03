@@ -8,6 +8,7 @@ public class PCBuilder : MonoBehaviour
     public GameObject shopManager;
 
     public GameObject componentsCanvas;
+    public Button closeButton;
 
     [Header("Component Prefabs")]
     public GameObject cpuViewPrefab;
@@ -33,8 +34,21 @@ public class PCBuilder : MonoBehaviour
         shop = shopManager.GetComponent<Shop>();
         canvasTransform = componentsCanvas.GetComponent<Transform>();
 
-        buildingPC = new PC(shop.motherBoardParts[0], shop.powerSupplyParts[0]);
         purchaseButton.onClick.AddListener(Purchase);
+        closeButton.onClick.AddListener(CloseBuilder);
+        buildingPC = new PC(shop.motherBoardParts[0], shop.powerSupplyParts[0]);
+    }
+
+    private void OnEnable() {
+        buildingPC = new PC(shop.motherBoardParts[0], shop.powerSupplyParts[0]);   
+    }
+
+    private void OnDisable() {
+        buildingPC = null;
+
+        foreach (Transform picker in canvasTransform) {
+            GameObject.Destroy(picker.gameObject);
+        }
     }
 
     void Update() {
@@ -92,10 +106,7 @@ public class PCBuilder : MonoBehaviour
             prevMotherboard = motherboard;
         }
 
-        SetPowerData();
-        SetPriceData();
-
-        purchaseButton.interactable = buildingPC.CanMine();
+        purchaseButton.interactable = (buildingPC.CanMine()) && (buildingPC.GetPrice() <= pcManager.Balance);
     }
 
     private void SetPowerData() {
@@ -113,31 +124,53 @@ public class PCBuilder : MonoBehaviour
 
     private void Purchase() {
         pcManager.AddComputer(buildingPC);
-        buildingPC = null;
+        gameObject.SetActive(false);
+    }
+
+    private void CloseBuilder() {
+        gameObject.SetActive(false);
     }
 
     public void SetMotherboard(MotherBoardPart motherboard) {
         buildingPC.SetMotherboard(motherboard);
+
+        SetPowerData();
+        SetPriceData();
     }
 
     public void SetPowerSupply(PowerSupplyPart powerSupply) {
         buildingPC.powerSupply = powerSupply;
+
+        SetPowerData();
+        SetPriceData();
     }
 
     public void SetCpu(CpuPart cpu, int index) {
         buildingPC.ReplaceCpu(cpu, index);
+
+        SetPowerData();
+        SetPriceData();
     }
 
     public void SetRam(RamPart ram, int index) {
         buildingPC.ReplaceRam(ram, index);
+
+        SetPowerData();
+        SetPriceData();
     }
 
     public void SetGpu(GpuPart gpu, int index) {
         buildingPC.ReplaceGpu(gpu, index);
+
+        SetPowerData();
+        SetPriceData();
     }
 
     public void SetDisk(DiskPart disk, int index) {
         buildingPC.ReplaceDisk(disk, index);
+
+        SetPowerData();
+        SetPriceData();
     }
 
     void BuildPC() {

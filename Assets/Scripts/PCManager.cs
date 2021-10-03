@@ -14,7 +14,7 @@ public class PCManager : MonoBehaviour
     public double IncomePerSec => incomePerSec;
 
     [SerializeField]
-    private double balance = 0;
+    private double balance = 0.0;
     public double Balance => balance;
 
     public List<CurrancyEvent> events = new List<CurrancyEvent>();
