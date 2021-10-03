@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Litecoin
   m_EditorClassIdentifier: 
   currencyName: LTC
-  USDRate: 100
+  USDRate: 0.4
+  cpuScore: 0.25
+  ramScore: 0
+  gpuScore: 0
+  diskScore: 0

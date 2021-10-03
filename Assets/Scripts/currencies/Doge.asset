@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Doge
   m_EditorClassIdentifier: 
   currencyName: DOGE
-  USDRate: 500
+  USDRate: 0.1
+  cpuScore: 0
+  ramScore: 1
+  gpuScore: 0
+  diskScore: 0

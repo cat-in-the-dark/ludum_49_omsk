@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Burst
   m_EditorClassIdentifier: 
   currencyName: BRST
-  USDRate: 150
+  USDRate: 0.05
+  cpuScore: 0
+  ramScore: 0
+  gpuScore: 0
+  diskScore: 2

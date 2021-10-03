@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Bitcoin
   m_EditorClassIdentifier: 
   currencyName: BTC
-  USDRate: 1000
+  USDRate: 0.2
+  cpuScore: 0
+  ramScore: 0
+  gpuScore: 0.5
+  diskScore: 0
