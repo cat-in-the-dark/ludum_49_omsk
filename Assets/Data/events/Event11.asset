@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44152472e70fa460889d01f278d17d91, type: 3}
   m_Name: Event11
   m_EditorClassIdentifier: 
-  Text: 
-  names: []
-  multipliers: []
+  Text: "\u0412\u0441\u043A\u0440\u044B\u043B\u0438 \u0444\u0430\u043A\u0442, \u0447\u0442\u043E
+    \u0432 LTC \u0432\u0441\u0442\u0440\u0435\u043D \u0432\u0438\u0440\u0443\u0441"
+  names:
+  - LTC
+  multipliers:
+  - 0

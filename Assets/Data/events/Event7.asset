@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44152472e70fa460889d01f278d17d91, type: 3}
   m_Name: Event7
   m_EditorClassIdentifier: 
-  Text: 
-  names: []
-  multipliers: []
+  Text: "\u0424\u0421\u0411 \u0441\u0442\u0430\u043B\u043E \u043C\u0430\u0439\u043D\u0438\u0442\u044C.
+    \u0412\u0441\u0435 \u0437\u0430\u0434\u0443\u043C\u0430\u043B\u0438\u0441\u044C.
+    \u041C\u0430\u0439\u043D\u0438\u043D\u0433 \u0432\u0441\u0435\u0433\u043E \u0443\u043F\u0430\u043B."
+  names:
+  - BTC
+  - LTC
+  - DOGE
+  - BRST
+  multipliers:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
