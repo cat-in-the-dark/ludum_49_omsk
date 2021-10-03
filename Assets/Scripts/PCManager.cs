@@ -13,7 +13,7 @@ public class CurrencyScores
 
 public class PCManager : MonoBehaviour
 {
-    double JAM_MUL = 10;
+    double JAM_MUL = 50;
     public NewsFeed newsFeed;
     public CurrancyEvent currancyEvent;
     private List<PC> computers = new List<PC>();
@@ -100,8 +100,8 @@ public class PCManager : MonoBehaviour
             if (cur.currencyName == "LTC") mul = scores.LTC;
             icomeSum += mul * computers.Aggregate(0.0, (acc, pc) => acc + pc.GetDollarsPerSecFor(cur));
         }
-        incomePerSec = icomeSum;
-        balance += JAM_MUL * incomePerSec * Time.deltaTime;
+        incomePerSec = icomeSum * JAM_MUL;
+        balance += incomePerSec * Time.deltaTime;
     }
 
     void SetEvent(int idx)
